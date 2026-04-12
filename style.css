@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #0f172a;
     color: white;
     text-align: center;
@@ -20,79 +20,124 @@ canvas {
 }
 
 header {
-    padding: 80px 20px;
+    padding: 100px 20px;
     background: linear-gradient(135deg, #2563eb, #9333ea);
     animation: fadeIn 1s ease;
 }
 
 h1 {
-    font-size: 50px;
+    font-size: clamp(35px, 8vw, 60px);
+    margin-bottom: 10px;
+}
+
+.header-btns {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .btn {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
+    padding: 14px 30px;
     background: white;
     color: black;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     transition: 0.3s;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
 }
 
 .btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn-donate {
+    background: #f97316;
+    color: white;
+}
+
+.btn-donate:hover {
+    background: #ea580c;
 }
 
 section {
-    padding: 50px 20px;
+    padding: 60px 20px;
 }
 
 .cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .card {
     background: #1e293b;
-    padding: 20px;
-    border-radius: 15px;
-    width: 200px;
+    padding: 25px;
+    border-radius: 18px;
+    width: 220px;
     transition: 0.3s;
     text-decoration: none;
     color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
 }
 
 .card:hover {
-    transform: translateY(-10px) scale(1.05);
+    transform: translateY(-10px);
+    background: #334155;
+}
+
+.donate-card {
+    background: linear-gradient(135deg, #f97316, #ef4444);
+    font-weight: bold;
+}
+
+.donate-card:hover {
+    filter: brightness(1.1);
 }
 
 .ip-box {
-    margin-top: 15px;
-    padding: 15px;
+    margin-top: 20px;
+    padding: 20px 40px;
     background: #1e293b;
-    border-radius: 10px;
+    border-radius: 12px;
     display: inline-block;
     cursor: pointer;
     transition: 0.3s;
+    font-family: monospace;
+    font-size: 22px;
+    border: 2px border transparent;
 }
 
 .ip-box:hover {
     background: #334155;
+    border-color: #2563eb;
 }
 
 .status {
-    margin-top: 10px;
-    font-size: 18px;
+    font-size: 20px;
+    color: #4ade80;
+    font-weight: bold;
 }
 
 .rules {
     text-align: left;
-    max-width: 900px;
-    margin: auto;
-    line-height: 1.7;
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.6;
+    background: rgba(30, 41, 59, 0.7);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
 }
 
 pre {
@@ -102,8 +147,11 @@ pre {
 }
 
 footer {
-    padding: 20px;
+    padding: 30px;
     background: #020617;
+    margin-top: 50px;
+    font-size: 14px;
+    opacity: 0.7;
 }
 
 @keyframes fadeIn {
@@ -112,6 +160,6 @@ footer {
 }
 
 @media(max-width: 600px) {
-    h1 { font-size: 35px; }
     .card { width: 100%; }
+    .btn { width: 90%; }
 }
